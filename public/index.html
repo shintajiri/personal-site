@@ -13,6 +13,14 @@
 <meta property="og:image" content="https://shintajiri.pages.dev/assets/tajiri-illust.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP0K9HY3BF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BP0K9HY3BF');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
@@ -272,8 +280,55 @@ footer p{font-size:13px; color:var(--slate)}
 
   <footer>
     <p>© 2026 Shintaro Tajiri</p>
+    <p>アクセス解析に Google Analytics を使用しています</p>
   </footer>
 
 </div>
+<script>
+(function () {
+  // 実験をしていないあいだは none。フェーズ3のA/Bでここを差し替える
+  var EXPERIMENT = { experiment_id: 'none', variant: 'none' };
+
+  function track(name, params) {
+    if (typeof gtag !== 'function') return;
+    var p = { experiment_id: EXPERIMENT.experiment_id, variant: EXPERIMENT.variant };
+    for (var k in params) { p[k] = params[k]; }
+    gtag('event', name, p);
+  }
+
+  // cta_click — researchmap / x / mail / sfc
+  document.querySelectorAll('[data-cta]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      track('cta_click', { cta: el.getAttribute('data-cta') });
+    });
+  });
+
+  // section_view — 節の上端が画面の上60%に入ったら1回だけ
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        track('section_view', { section: e.target.getAttribute('data-section') });
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -40% 0px', threshold: 0 });
+    document.querySelectorAll('[data-section]').forEach(function (el) { io.observe(el); });
+  }
+
+  // scroll_depth — 25/50/75/100 を各1回
+  var marks = [25, 50, 75, 100], hit = {};
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    if (max <= 0) return;
+    var pct = (h.scrollTop || document.body.scrollTop) / max * 100;
+    marks.forEach(function (m) {
+      if (!hit[m] && pct >= m - 0.5) { hit[m] = 1; track('scroll_depth', { percent: m }); }
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 </body>
 </html>
