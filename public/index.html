@@ -4,113 +4,270 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>田尻慎太郎 | 神田外語大学 教育イノベーション研究センター</title>
-<meta name="description" content="田尻慎太郎。神田外語大学 教育イノベーション研究センター教授。大学IR、教育工学、データサイエンス教育。">
+<meta name="description" content="田尻慎太郎。神田外語大学 教育イノベーション研究センター教授。大学IR、教育工学、データサイエンス教育。入学時データと学習ログをつないで、学生の学びが伸びる条件を探しています。">
 <link rel="canonical" href="https://shintajiri.pages.dev/">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://shintajiri.pages.dev/">
-<meta property="og:title" content="田尻慎太郎 | 神田外語大学 教育イノベーション研究センター">
-<meta property="og:description" content="大学IR、教育工学、データサイエンス教育。入学時データと学習データによる学習成果の分析と早期リスク予測。">
+<meta property="og:title" content="田尻慎太郎 | データで大学を動かす">
+<meta property="og:description" content="大学IR、教育工学、データサイエンス教育。入学時データと学習ログをつないで、学生の学びが伸びる条件を探しています。">
+<meta property="og:image" content="https://shintajiri.pages.dev/assets/tajiri-illust.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <style>
 :root{
-  --bg:#fbfaf8; --fg:#1c1b19; --muted:#5f5b55; --line:#e2ddd5;
-  --accent:#1f5f78; --card:#ffffff;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#14161a; --fg:#e8e6e2; --muted:#a19c95; --line:#2b2f36;
-    --accent:#7fb7cd; --card:#1b1e23;
-  }
+  --paper:#faf6ef; --ink:#16181c; --navy:#2b3138; --sand:#e3c89b;
+  --sand-deep:#c9a06a; --brown:#3b3028; --olive:#8a9a5b; --ice:#eaf1f4; --slate:#7e8b95;
+  --hair:rgba(22,24,28,.14);
+  --display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--bg); color:var(--fg);
-  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,sans-serif;
-  font-size:16px; line-height:1.9; letter-spacing:.01em;
+body{margin:0; font-family:var(--body); color:var(--ink); background:var(--paper); font-size:16px;}
+a{color:var(--brown); text-decoration:none}
+a:hover{color:var(--sand-deep)}
+h1,h2,h3{font-family:var(--display); margin:0; letter-spacing:.01em}
+p{margin:0}
+img{max-width:100%}
+.inner{max-width:1120px; margin:0 auto; padding-inline:24px}
+.topbar{display:flex; justify-content:flex-end; align-items:center; gap:20px; padding-block:22px; flex-wrap:wrap}
+.topbar nav{display:flex; gap:22px; flex-wrap:wrap}
+.more{font-family:var(--display); font-weight:700; font-size:15px}
+
+.hero{display:grid; grid-template-columns:7fr 5fr; gap:40px; align-items:center; padding-block:30px 26px}
+.eyebrow{font-family:var(--display); font-weight:700; font-size:14px; letter-spacing:.2em; color:var(--sand-deep)}
+.hero h1{font-size:clamp(38px,5.4vw,68px); font-weight:900; line-height:1.24; margin-top:18px; color:var(--navy); text-wrap:balance}
+.lede{font-size:clamp(16px,1.4vw,19px); line-height:2.05; margin-top:24px; max-width:30em}
+.nameline{display:flex; align-items:baseline; gap:16px; margin-top:32px; flex-wrap:wrap}
+.nameline h2{font-size:clamp(25px,2.4vw,30px); font-weight:900}
+.romaji{font-family:var(--display); font-size:13px; letter-spacing:.18em; color:var(--slate)}
+.affil{font-size:15px; line-height:1.95; color:var(--brown); margin-top:8px}
+.badge{display:inline-flex; align-items:center; gap:9px; border:2px solid var(--ink); border-radius:999px; padding:7px 16px; background:var(--ice); font-family:var(--display); font-weight:700; font-size:14px; margin-top:16px}
+.badge .dot{width:9px; height:9px; border-radius:50%; background:var(--sand-deep); border:1.5px solid var(--ink)}
+.ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:30px}
+.pill{display:inline-flex; align-items:center; justify-content:center; gap:8px; border:2.5px solid var(--ink); border-radius:999px; padding:13px 22px; min-height:48px; font-family:var(--display); font-weight:700; font-size:16px; background:#fff; box-shadow:4px 4px 0 var(--ink)}
+.pill.solid{background:var(--navy); color:var(--paper)}
+.portrait{display:flex; justify-content:center; align-items:flex-end}
+.portrait .stage{position:relative; display:flex; justify-content:center; align-items:flex-end}
+.portrait .ground{position:absolute; bottom:14px; width:330px; max-width:96%; height:66px; background:var(--sand); border-radius:50%}
+.portrait img{position:relative; width:344px; display:block}
+
+.sec{display:grid; grid-template-columns:190px minmax(0,1fr); gap:56px; padding-block:60px; border-top:1px solid var(--hair)}
+.label{font-family:var(--display); font-weight:700; font-size:15px; letter-spacing:.14em; color:var(--brown)}
+.label .bar{display:block; width:34px; height:4px; background:var(--sand-deep); border-radius:2px; margin-bottom:14px}
+
+.cards{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px}
+.card{background:#fff; border:2.5px solid var(--ink); border-radius:18px; box-shadow:5px 5px 0 var(--ink); padding:26px 28px}
+.card .ico{width:42px; height:42px; border:2.5px solid var(--ink); border-radius:12px; display:flex; align-items:center; justify-content:center}
+.card h3{font-size:19px; font-weight:700; margin-top:16px; line-height:1.55}
+.card p{font-size:15px; line-height:1.92; color:var(--brown); margin-top:9px}
+
+.row{display:grid; grid-template-columns:130px minmax(0,1fr); gap:26px; padding-block:18px; align-items:baseline; border-bottom:1px solid var(--hair)}
+.row:last-of-type{border-bottom:0}
+.yr{font-family:var(--display); font-weight:700; font-size:14px; color:var(--sand-deep); letter-spacing:.06em; white-space:nowrap}
+.ttl{font-size:17px; line-height:1.8; font-weight:500}
+.sub{font-size:14px; color:var(--slate); margin-left:10px}
+.tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px}
+.tag{font-size:14px; border:2px solid var(--ink); border-radius:999px; padding:6px 15px; background:#fff}
+
+.dark{background:var(--navy); color:var(--paper); border:2.5px solid var(--ink); border-radius:18px; box-shadow:5px 5px 0 var(--ink); padding:34px 36px}
+.dark .cols{display:grid; grid-template-columns:1.15fr 0.85fr; gap:34px}
+.hist{display:flex; flex-direction:column; gap:18px}
+.hist .item{display:grid; grid-template-columns:108px minmax(0,1fr); gap:16px}
+.hist p{font-size:15px; line-height:1.85}
+.hist .muted{color:#c3c8cd}
+.box{border:2px solid var(--sand); border-radius:14px; padding:20px 22px}
+.box .h{font-family:var(--display); font-weight:700; font-size:13px; letter-spacing:.16em; color:var(--sand)}
+.box p{font-size:15px; line-height:1.9; margin-top:10px}
+
+.contact{border-top:1px solid var(--hair); padding-block:60px 40px}
+.contact .panel{background:var(--sand); border:2.5px solid var(--ink); border-radius:22px; box-shadow:6px 6px 0 var(--ink); padding:44px 46px; display:grid; grid-template-columns:7fr 5fr; gap:36px; align-items:center}
+.contact h2{font-size:clamp(24px,2.6vw,32px); font-weight:900; line-height:1.55; color:var(--navy)}
+.contact p{font-size:16px; line-height:2; color:var(--brown); margin-top:16px}
+.contact .links{display:flex; flex-direction:column; gap:12px; align-items:stretch}
+
+.column{max-width:44em}
+.column .q{font-family:var(--display); font-size:22px; font-weight:700; line-height:1.85; color:var(--navy); border-left:4px solid var(--sand-deep); padding-left:22px}
+.column .attr{font-size:14px; color:var(--slate); margin-top:14px; padding-left:26px; line-height:1.9}
+.column .attr-name{font-family:var(--display); font-weight:700; font-size:17px; color:var(--navy)}
+.column{max-width:none}
+.column .mentor-body{display:grid; grid-template-columns:minmax(0,1fr) 230px; gap:44px; align-items:center}
+.column .mentor-figure img{width:100%; height:auto; display:block}
+.column .txt{font-size:16px; line-height:2.05; margin-top:24px}
+.column .txt + .txt{margin-top:16px}
+footer{border-top:1px solid var(--hair); padding-block:24px 34px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap}
+footer p{font-size:13px; color:var(--slate)}
+
+@media (max-width: 880px){
+  .hero{grid-template-columns:1fr; gap:24px; padding-block:16px}
+  .portrait{order:-1}
+  .portrait img{width:250px}
+  .portrait .ground{width:230px; height:50px; bottom:10px}
+  .sec{grid-template-columns:1fr; gap:18px; padding-block:38px}
+  .cards{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr; gap:4px; padding-block:14px}
+  .sub{display:block; margin-left:0}
+  .column .mentor-body{grid-template-columns:1fr; gap:20px}
+  .column .mentor-figure{max-width:150px; margin-inline:auto}
+  .column .q{font-size:18px; padding-left:16px}
+  .column .attr{padding-left:20px}
+  .dark{padding:24px 24px}
+  .dark .cols{grid-template-columns:1fr; gap:20px}
+  .hist .item{grid-template-columns:1fr; gap:3px}
+  .contact .panel{grid-template-columns:1fr; padding:28px 24px}
+  .ctas .pill, .contact .links .pill{width:100%}
 }
-.wrap{max-width:760px; margin:0 auto; padding-inline:20px; padding-block:0}
-header{padding-block:72px 40px; border-bottom:1px solid var(--line)}
-h1{margin:0 0 6px; font-size:2rem; line-height:1.35; letter-spacing:.02em}
-.romaji{margin:0 0 20px; color:var(--muted); font-size:.85rem; letter-spacing:.14em; text-transform:uppercase}
-.lede{margin:0; font-size:1.05rem; color:var(--fg)}
-.affil{margin:20px 0 0; padding:0; list-style:none; color:var(--muted); font-size:.95rem}
-.affil li{margin-top:4px}
-section{padding-block:40px; border-bottom:1px solid var(--line)}
-h2{margin:0 0 16px; font-size:.82rem; letter-spacing:.18em; color:var(--accent); font-weight:700}
-p{margin:0 0 14px}
-p:last-child{margin-bottom:0}
-.grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px}
-.card h3{margin:0 0 6px; font-size:1rem}
-.card p{font-size:.92rem; color:var(--muted); line-height:1.8}
-.teach{margin:0; padding:0; list-style:none}
-.teach li{padding:8px 0; border-top:1px solid var(--line); font-size:.95rem}
-.teach li:first-child{border-top:0}
-.teach span{color:var(--muted); font-size:.85rem; margin-left:8px}
-.links{display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; list-style:none}
-.links a{
-  display:inline-block; padding:9px 16px; border:1px solid var(--line); border-radius:999px;
-  color:var(--fg); text-decoration:none; font-size:.92rem; background:var(--card);
-}
-.links a:hover{border-color:var(--accent); color:var(--accent)}
-.pending{color:var(--muted); font-size:.92rem}
-footer{padding-block:32px 56px; color:var(--muted); font-size:.82rem}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header data-section="hero">
-    <h1>田尻 慎太郎</h1>
-    <p class="romaji">Shintaro Tajiri</p>
-    <p class="lede">データで大学を動かす。入学時のデータと日々の学習データをつなぎ、学生の学びが伸びる条件を探しています。</p>
-    <ul class="affil">
-      <li>神田外語大学 教育イノベーション研究センター 教授（2025年〜）</li>
-      <li>北陸大学 客員教授（兼務）</li>
-    </ul>
+<div class="inner">
+  <div class="topbar">
+    <nav>
+      <a class="more" href="https://researchmap.jp/read0128413/" data-cta="researchmap">researchmap</a>
+      <a class="more" href="https://x.com/shintajiri" data-cta="x">X</a>
+      <a class="more" href="mailto:tajiri-s@kanda.kuis.ac.jp" data-cta="mail">連絡先</a>
+    </nav>
+  </div>
+</div>
+
+<div class="inner">
+  <header class="hero" data-section="hero">
+    <div>
+      <p class="eyebrow">大学IR ／ 教育工学 ／ データサイエンス教育</p>
+      <h1>データで<br>大学を動かす。</h1>
+      <p class="lede">入学時のデータと、日々の学習ログ。別々に置かれたままの数字をつないで、学生の学びが伸びる条件を探しています。</p>
+      <div class="nameline">
+        <h2>田尻 慎太郎</h2>
+        <p class="romaji">SHINTARO TAJIRI</p>
+      </div>
+      <p class="affil">神田外語大学 教育イノベーション研究センター 教授<br>同 DX・IR推進部門 ディレクター ／ 北陸大学 客員教授</p>
+      <p class="badge"><span class="dot"></span>Tableau Ambassador（4年連続）</p>
+      <div class="ctas">
+        <a class="pill solid" href="https://researchmap.jp/read0128413/" data-cta="researchmap">researchmap で業績を見る</a>
+        <a class="pill" href="https://x.com/shintajiri" data-cta="x">X @shintajiri</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="stage">
+        <div class="ground"></div>
+        <img src="assets/tajiri-illust.png" alt="田尻慎太郎のイラスト" width="394" height="520">
+      </div>
+    </div>
   </header>
+</div>
 
-  <section data-section="research">
-    <h2>研究</h2>
-    <p>専門は大学IR、教育工学、データサイエンス教育。分析は Tableau・Python・R で行っています。</p>
-    <div class="grid">
+<div class="inner">
+
+  <section class="sec" data-section="work">
+    <div class="label"><span class="bar"></span>いま取り組んでいること</div>
+    <div class="cards">
       <div class="card">
-        <h3>学習成果の予測</h3>
-        <p>入学時データと学習データから、学習成果を説明し、つまずきを早い段階で見つける。</p>
+        <div class="ico" style="background:var(--sand)">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#16181c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><rect x="5" y="12" width="3.4" height="6" rx="1"/><rect x="10.3" y="8" width="3.4" height="10" rx="1"/><rect x="15.6" y="4.5" width="3.4" height="13.5" rx="1"/></svg>
+        </div>
+        <h3>伸びる条件を見つける</h3>
+        <p>入学時のデータと学習ログをつないで学習成果を説明し、つまずきを早い段階で見つける</p>
       </div>
       <div class="card">
-        <h3>タイピング教育の長期分析</h3>
-        <p>複数年にわたる学習ログから、練習量と上達の関係を追う。</p>
+        <div class="ico" style="background:var(--olive)">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#16181c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5.5 12v8h13v-8"/><path d="M10 20v-4.5h4V20"/></svg>
+        </div>
+        <h3>学部をつくる</h3>
+        <p>国際経営学部（2028年開設予定・設置構想中）の設計を担当。ビジネス英語×経営×データ・AI</p>
       </div>
       <div class="card">
-        <h3>ディプロマポリシーの調査</h3>
-        <p>大学が掲げる卒業時の到達目標を、テキストとして横断的に読む。</p>
+        <div class="ico" style="background:var(--ice)">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#16181c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h6.5a2 2 0 0 1 2 2V20a2.4 2.4 0 0 0-2-1H4z"/><path d="M20 5.5h-5.5a2 2 0 0 0-2 2V20a2.4 2.4 0 0 1 2-1H20z"/></svg>
+        </div>
+        <h3>データを扱える学生を増やす</h3>
+        <p>統計学Ⅰ・Ⅱ と IRゼミ を担当。学生のデータAIラボ DAIL@KUIS には顧問として関わる</p>
       </div>
     </div>
   </section>
 
-  <section data-section="teaching">
-    <h2>担当</h2>
-    <ul class="teach">
-      <li>統計学Ⅰ・Ⅱ<span>神田外語大学</span></li>
-      <li>IRゼミ<span>神田外語大学</span></li>
-    </ul>
-    <p style="margin-top:16px">国際経営学部（2028年開設予定・設置構想中）の設計を担当しています。英語 × ビジネス × データAI を柱にした学部です。学生のデータAIラボ DAIL@KUIS には顧問として関わっています。</p>
+  <section class="sec" data-section="publications">
+    <div class="label"><span class="bar"></span>最近の論文</div>
+    <div>
+      <div class="row"><p class="yr">2026年9月</p><p class="ttl">A Bottom-Up Evaluation Indicator for Diploma Policy Attainment in a Japanese University</p></div>
+      <div class="row"><p class="yr">2026年2月</p><p class="ttl">Bridging Data Science and Information Literacy</p></div>
+      <div class="row"><p class="yr">2025年11月</p><p class="ttl">大学初年次におけるタイピングスキル習得の縦断的分析</p></div>
+      <div class="tags">
+        <span class="tag">IR</span><span class="tag">高等教育</span><span class="tag">教育工学</span>
+        <span class="tag">データサイエンス</span><span class="tag">教育経済学</span><span class="tag">公共選択論</span>
+      </div>
+      <a class="more" href="https://researchmap.jp/read0128413/" data-cta="researchmap" style="display:inline-block; margin-top:22px">researchmap で全件を見る →</a>
+    </div>
   </section>
 
-  <section data-section="contact">
-    <h2>リンク</h2>
-    <p class="pending">researchmap・note・X・連絡先は準備中です。</p>
-    <!-- 次のPRで有効化する。data-cta は GA4 の cta_click 用（フェーズ2）
-    <ul class="links">
-      <li><a href="" data-cta="researchmap">researchmap</a></li>
-      <li><a href="" data-cta="note">note</a></li>
-      <li><a href="" data-cta="x">X</a></li>
-      <li><a href="" data-cta="mail">メール</a></li>
-    </ul>
-    -->
+  <section class="sec" data-section="books">
+    <div class="label"><span class="bar"></span>書籍</div>
+    <div>
+      <div class="row"><p class="yr">2026年3月</p><p class="ttl">デジタル教科書『データサイエンス』<span class="sub">監修／東京都教育委員会</span></p></div>
+      <div class="row"><p class="yr">2024年12月</p><p class="ttl">アジャイルデータモデリング<span class="sub">分担執筆／講談社</span></p></div>
+      <div class="row"><p class="yr">2022年5月</p><p class="ttl">大学IR標準ガイドブック<span class="sub">分担執筆／インプレスR&amp;D</span></p></div>
+      <div class="row"><p class="yr">2017年3月</p><p class="ttl">大学IRスタンダード指標集<span class="sub">分担執筆／玉川大学出版部</span></p></div>
+      <a class="more" href="https://researchmap.jp/read0128413/books_etc" data-cta="researchmap" style="display:inline-block; margin-top:22px">全10件を見る →</a>
+    </div>
+  </section>
+
+  <section class="sec" data-section="career">
+    <div class="label"><span class="bar"></span>経歴</div>
+    <div class="dark">
+      <div class="cols">
+        <div class="hist">
+          <div class="item"><p class="yr" style="color:var(--sand)">2025 —</p><p>神田外語大学 教育イノベーション研究センター 教授<br><span class="muted">DX・IR推進部門 ディレクター ／ 北陸大学 客員教授</span></p></div>
+          <div class="item"><p class="yr" style="color:var(--sand)">2019 — 2025</p><p>北陸大学 経済経営学部 教授<br><span class="muted">学長補佐（情報・IR担当）</span></p></div>
+          <div class="item"><p class="yr" style="color:var(--sand)">2014 — 2019</p><p>横浜商科大学 商学部 准教授<br><span class="muted">IR室長</span></p></div>
+          <div class="item"><p class="yr" style="color:var(--sand)">2005 — 2014</p><p>嘉悦大学 専任講師<br><span class="muted">情報メディアセンター 副センター長 ／ 教務センター長</span></p></div>
+          <div class="item"><p class="yr" style="color:var(--sand)">1996 — 2001</p><p><span style="white-space:nowrap">長銀総合研究所</span> ／ <span style="white-space:nowrap">価値総合研究所</span><br><span class="muted">ライフデザイン研究所 研究員 ／ 会計検査院 特別調査職</span></p></div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px">
+          <div class="box">
+            <p class="h">学位</p>
+            <p>MA in Economics<br><span class="muted">George Mason University</span></p>
+            <p>修士（政策・メディア）<br><span class="muted">慶應義塾大学大学院 政策・メディア研究科</span></p>
+          </div>
+          <div class="box">
+            <p class="h">研究分野</p>
+            <p>高等教育学・IR ／ 教育工学 ／ 経営情報学 ／ 公共政策</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" data-section="mentor">
+    <div class="label"><span class="bar"></span>恩師のこと</div>
+    <div class="column">
+      <div class="mentor-body">
+        <div>
+      <p class="q">楽しくなければ大学でない、<br>楽しいだけでも大学でない</p>
+      <p class="attr"><span class="attr-name">加藤寛</span>　慶應義塾大学 湘南藤沢キャンパス 初代総合政策学部長（1990–1994）<br><span style="white-space:nowrap">嘉悦大学 元学長</span></p>
+      <p class="txt">SFCの恩師です。「僕はなにも教えないのに、みんながどんどん勉強して僕に教えてくれる」と言う人で、人の力を引き出すのがうまい先生でした。もうひとつよく口にしていたのが「改革はとにかくすぐやって、まず60点を取れればよい」。</p>
+      <p class="txt">私がやっているのは、この教えを数字の側から実装することだと思っています。大学の仕組みを作り替え、教育とつなぎ、その上で学生が社会と関わりながら伸びていく。北陸大学での6年間も、いま神田外語大学で設計している学部も、その延長線上にあります。</p>
+      <a class="more" href="https://www.keio.ac.jp/ja/sfc/magazine/alumni-stories/006183/" data-cta="sfc" style="display:inline-block; margin-top:22px">SFCスピリッツのインタビュー →</a>
+        </div>
+        <div class="mentor-figure"><img src="assets/kato-illust.png" alt="加藤寛先生のイラスト" width="274" height="620"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" data-section="contact">
+    <div class="panel">
+      <div>
+        <h2>IR・データ活用の相談、<br>講演・研修のご依頼</h2>
+        <p>大学のデータ活用、IR体制づくり、データサイエンス教育、AI教育の設計について、お話しできることがあります。</p>
+      </div>
+      <div class="links">
+        <a class="pill solid" href="mailto:tajiri-s@kanda.kuis.ac.jp" data-cta="mail">tajiri-s@kanda.kuis.ac.jp</a>
+        <a class="pill" href="https://researchmap.jp/read0128413/" data-cta="researchmap">researchmap</a>
+        <a class="pill" href="https://x.com/shintajiri" data-cta="x">X @shintajiri</a>
+      </div>
+    </div>
   </section>
 
   <footer>

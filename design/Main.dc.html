@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <style>
+    :root{
+      --paper:#faf6ef; --ink:#16181c; --navy:#2b3138; --sand:#e3c89b;
+      --sand-deep:#c9a06a; --brown:#3b3028; --olive:#8a9a5b; --ice:#eaf1f4; --slate:#7e8b95;
+      --hair:rgba(22,24,28,.14);
+      --display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+      --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    }
+    body{margin:0; font-family:var(--body); color:var(--ink); background:var(--paper);}
+    a{color:var(--brown); text-decoration:none;}
+    a:hover{color:var(--sand-deep);}
+    h1,h2,h3{font-family:var(--display); margin:0; letter-spacing:.01em;}
+    p{margin:0;}
+    .inner{max-width:1120px; margin:0 auto; padding-inline:56px;}
+    .sec{display:grid; grid-template-columns:190px minmax(0,1fr); gap:56px; padding-block:66px; border-top:1px solid var(--hair);}
+    .label{font-family:var(--display); font-weight:700; font-size:15px; letter-spacing:.14em; color:var(--brown);}
+    .label .bar{display:block; width:34px; height:4px; background:var(--sand-deep); border-radius:2px; margin-bottom:14px;}
+    .card{background:#fff; border:2.5px solid var(--ink); border-radius:18px; box-shadow:5px 5px 0 var(--ink); padding:26px 28px;}
+    .pill{display:inline-flex; align-items:center; gap:8px; border:2.5px solid var(--ink); border-radius:999px; padding:13px 22px; font-family:var(--display); font-weight:700; font-size:16px; background:#fff; box-shadow:4px 4px 0 var(--ink);}
+    .pill.solid{background:var(--navy); color:var(--paper);}
+    .yr{font-family:var(--display); font-weight:700; font-size:14px; color:var(--sand-deep); letter-spacing:.06em; white-space:nowrap;}
+    .row{display:grid; grid-template-columns:130px minmax(0,1fr); gap:26px; padding-block:18px; align-items:baseline; border-bottom:1px solid var(--hair);}
+    .row:last-child{border-bottom:0;}
+    .more{font-family:var(--display); font-weight:700; font-size:15px;}
+    .tag{font-size:14px; border:2px solid var(--ink); border-radius:999px; padding:6px 15px; background:#fff;}
+  </style>
+</helmet>
+
+<div style="background:var(--paper); padding-bottom:0">
+
+  <!-- top bar -->
+  <div class="inner" style="display:flex; justify-content:flex-end; align-items:center; padding-block:22px">
+    <div style="display:flex; gap:26px; align-items:center">
+      <a class="more" href="https://researchmap.jp/read0128413/">researchmap</a>
+      <a class="more" href="https://x.com/shintajiri">X</a>
+      <a class="more" href="mailto:tajiri-s@kanda.kuis.ac.jp">連絡先</a>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <div class="inner" style="position:relative; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:40px; align-items:center; padding-block:30px 26px">
+
+    <div style="grid-column:span 7">
+      <p style="font-family:var(--display); font-weight:700; font-size:14px; letter-spacing:.2em; color:var(--sand-deep)">大学IR ／ 教育工学 ／ データサイエンス教育</p>
+      <h1 style="font-size:68px; font-weight:900; line-height:1.24; margin-top:18px; color:var(--navy); text-wrap:balance">データで<br>大学を動かす。</h1>
+      <p style="font-size:19px; line-height:2.05; margin-top:26px; max-width:30em">入学時のデータと、日々の学習ログ。別々に置かれたままの数字をつないで、学生の学びが伸びる条件を探しています。</p>
+
+      <div style="display:flex; align-items:baseline; gap:16px; margin-top:34px">
+        <h2 style="font-size:30px; font-weight:900">田尻 慎太郎</h2>
+        <p style="font-family:var(--display); font-size:14px; letter-spacing:.18em; color:var(--slate)">SHINTARO TAJIRI</p>
+      </div>
+      <p style="font-size:15px; line-height:1.95; color:var(--brown); margin-top:8px">
+        神田外語大学 教育イノベーション研究センター 教授<br>
+        同 DX・IR推進部門 ディレクター ／ 北陸大学 客員教授
+      </p>
+
+      <p style="display:inline-flex; align-items:center; gap:9px; border:2px solid var(--ink); border-radius:999px; padding:7px 16px; background:var(--ice); font-family:var(--display); font-weight:700; font-size:14px; margin-top:16px"><span style="width:9px; height:9px; border-radius:50%; background:var(--sand-deep); border:1.5px solid var(--ink)"></span>Tableau Ambassador（4年連続）</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:32px">
+        <a class="pill solid" href="https://researchmap.jp/read0128413/">researchmap で業績を見る</a>
+        <a class="pill" href="https://x.com/shintajiri">X @shintajiri</a>
+      </div>
+    </div>
+
+    <div style="grid-column:span 5; display:flex; justify-content:center; align-items:flex-end">
+      <div style="position:relative; display:flex; justify-content:center; align-items:flex-end">
+        <div style="position:absolute; bottom:14px; width:330px; height:66px; background:var(--sand); border-radius:50%"></div>
+        <img src="tajiri-illust.png" alt="田尻慎太郎のイラスト" style="position:relative; width:344px; display:block">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="inner">
+
+    <!-- いま取り組んでいること -->
+    <div class="sec">
+      <div class="label"><span class="bar"></span>いま取り組んでいること</div>
+      <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px">
+
+        <div class="card">
+          <div style="width:42px; height:42px; border:2.5px solid var(--ink); border-radius:12px; background:var(--sand); display:flex; align-items:center; justify-content:center">
+            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#16181c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><rect x="5" y="12" width="3.4" height="6" rx="1"/><rect x="10.3" y="8" width="3.4" height="10" rx="1"/><rect x="15.6" y="4.5" width="3.4" height="13.5" rx="1"/></svg>
+          </div>
+          <h3 style="font-size:19px; font-weight:700; margin-top:16px; line-height:1.55">伸びる条件を見つける</h3>
+          <p style="font-size:15px; line-height:1.92; color:var(--brown); margin-top:9px">入学時のデータと学習ログをつないで学習成果を説明し、つまずきを早い段階で見つける</p>
+        </div>
+
+        <div class="card">
+          <div style="width:42px; height:42px; border:2.5px solid var(--ink); border-radius:12px; background:var(--olive); display:flex; align-items:center; justify-content:center">
+            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#16181c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5.5 12v8h13v-8"/><path d="M10 20v-4.5h4V20"/></svg>
+          </div>
+          <h3 style="font-size:19px; font-weight:700; margin-top:16px; line-height:1.55">学部をつくる</h3>
+          <p style="font-size:15px; line-height:1.92; color:var(--brown); margin-top:9px">国際経営学部（2028年開設予定・設置構想中）の設計を担当。ビジネス英語×経営×データ・AI</p>
+        </div>
+
+        <div class="card">
+          <div style="width:42px; height:42px; border:2.5px solid var(--ink); border-radius:12px; background:var(--ice); display:flex; align-items:center; justify-content:center">
+            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#16181c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h6.5a2 2 0 0 1 2 2V20a2.4 2.4 0 0 0-2-1H4z"/><path d="M20 5.5h-5.5a2 2 0 0 0-2 2V20a2.4 2.4 0 0 1 2-1H20z"/></svg>
+          </div>
+          <h3 style="font-size:19px; font-weight:700; margin-top:16px; line-height:1.55">データを扱える学生を増やす</h3>
+          <p style="font-size:15px; line-height:1.92; color:var(--brown); margin-top:9px">統計学Ⅰ・Ⅱ と IRゼミ を担当。学生のデータAIラボ DAIL@KUIS には顧問として関わる</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 論文 -->
+    <div class="sec">
+      <div class="label"><span class="bar"></span>最近の論文</div>
+      <div>
+        <div class="row">
+          <p class="yr">2026年9月</p>
+          <p style="font-size:17px; line-height:1.8; font-weight:500">A Bottom-Up Evaluation Indicator for Diploma Policy Attainment in a Japanese University</p>
+        </div>
+        <div class="row">
+          <p class="yr">2026年2月</p>
+          <p style="font-size:17px; line-height:1.8; font-weight:500">Bridging Data Science and Information Literacy</p>
+        </div>
+        <div class="row">
+          <p class="yr">2025年11月</p>
+          <p style="font-size:17px; line-height:1.8; font-weight:500">大学初年次におけるタイピングスキル習得の縦断的分析</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:24px">
+          <span class="tag">IR</span><span class="tag">高等教育</span><span class="tag">教育工学</span>
+          <span class="tag">データサイエンス</span><span class="tag">教育経済学</span><span class="tag">公共選択論</span>
+        </div>
+        <a class="more" href="https://researchmap.jp/read0128413/" style="display:inline-block; margin-top:22px">researchmap で全件を見る →</a>
+      </div>
+    </div>
+
+    <!-- 著書 -->
+    <div class="sec">
+      <div class="label"><span class="bar"></span>書籍</div>
+      <div>
+        <div class="row">
+          <p class="yr">2026年3月</p>
+          <p style="font-size:17px; line-height:1.8; font-weight:500">デジタル教科書『データサイエンス』<span style="font-size:14px; color:var(--slate); margin-left:10px">監修／東京都教育委員会</span></p>
+        </div>
+        <div class="row">
+          <p class="yr">2024年12月</p>
+          <p style="font-size:17px; line-height:1.8; font-weight:500">アジャイルデータモデリング<span style="font-size:14px; color:var(--slate); margin-left:10px">分担執筆／講談社</span></p>
+        </div>
+        <div class="row">
+          <p class="yr">2022年5月</p>
+          <p style="font-size:17px; line-height:1.8; font-weight:500">大学IR標準ガイドブック<span style="font-size:14px; color:var(--slate); margin-left:10px">分担執筆／インプレスR&amp;D</span></p>
+        </div>
+        <div class="row">
+          <p class="yr">2017年3月</p>
+          <p style="font-size:17px; line-height:1.8; font-weight:500">大学IRスタンダード指標集<span style="font-size:14px; color:var(--slate); margin-left:10px">分担執筆／玉川大学出版部</span></p>
+        </div>
+        <a class="more" href="https://researchmap.jp/read0128413/books_etc" style="display:inline-block; margin-top:22px">全10件を見る →</a>
+      </div>
+    </div>
+
+    <!-- 経歴 -->
+    <div class="sec">
+      <div class="label"><span class="bar"></span>経歴</div>
+      <div style="background:var(--navy); color:var(--paper); border:2.5px solid var(--ink); border-radius:18px; box-shadow:5px 5px 0 var(--ink); padding:34px 36px">
+        <div style="display:grid; grid-template-columns:1.15fr 0.85fr; gap:34px">
+
+          <div style="display:flex; flex-direction:column; gap:18px">
+            <div style="display:grid; grid-template-columns:108px minmax(0,1fr); gap:16px">
+              <p class="yr" style="color:var(--sand)">2025 —</p>
+              <p style="font-size:15px; line-height:1.85">神田外語大学 教育イノベーション研究センター 教授<br><span style="color:#c3c8cd">DX・IR推進部門 ディレクター ／ 北陸大学 客員教授</span></p>
+            </div>
+            <div style="display:grid; grid-template-columns:108px minmax(0,1fr); gap:16px">
+              <p class="yr" style="color:var(--sand)">2019 — 2025</p>
+              <p style="font-size:15px; line-height:1.85">北陸大学 経済経営学部 教授<br><span style="color:#c3c8cd">学長補佐（情報・IR担当）</span></p>
+            </div>
+            <div style="display:grid; grid-template-columns:108px minmax(0,1fr); gap:16px">
+              <p class="yr" style="color:var(--sand)">2014 — 2019</p>
+              <p style="font-size:15px; line-height:1.85">横浜商科大学 商学部 准教授<br><span style="color:#c3c8cd">IR室長</span></p>
+            </div>
+            <div style="display:grid; grid-template-columns:108px minmax(0,1fr); gap:16px">
+              <p class="yr" style="color:var(--sand)">2005 — 2014</p>
+              <p style="font-size:15px; line-height:1.85">嘉悦大学 専任講師<br><span style="color:#c3c8cd">情報メディアセンター 副センター長 ／ 教務センター長</span></p>
+            </div>
+            <div style="display:grid; grid-template-columns:108px minmax(0,1fr); gap:16px">
+              <p class="yr" style="color:var(--sand)">1996 — 2001</p>
+              <p style="font-size:15px; line-height:1.85"><span style="white-space:nowrap">長銀総合研究所</span> ／ <span style="white-space:nowrap">価値総合研究所</span><br><span style="color:#c3c8cd">ライフデザイン研究所 研究員 ／ 会計検査院 特別調査職</span></p>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:18px">
+            <div style="border:2px solid var(--sand); border-radius:14px; padding:20px 22px">
+              <p style="font-family:var(--display); font-weight:700; font-size:13px; letter-spacing:.16em; color:var(--sand)">学位</p>
+              <p style="font-size:15px; line-height:1.9; margin-top:10px">MA in Economics<br><span style="color:#c3c8cd">George Mason University</span></p>
+              <p style="font-size:15px; line-height:1.9; margin-top:10px">修士（政策・メディア）<br><span style="color:#c3c8cd">慶應義塾大学大学院 政策・メディア研究科</span></p>
+            </div>
+            <div style="border:2px solid var(--sand); border-radius:14px; padding:20px 22px">
+              <p style="font-family:var(--display); font-weight:700; font-size:13px; letter-spacing:.16em; color:var(--sand)">研究分野</p>
+              <p style="font-size:15px; line-height:1.9; margin-top:10px">高等教育学・IR ／ 教育工学 ／ 経営情報学 ／ 公共政策</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 恩師のこと -->
+    <div class="sec">
+      <div class="label"><span class="bar"></span>恩師のこと</div>
+      <div>
+        <div style="display:grid; grid-template-columns:minmax(0,1fr) 230px; gap:44px; align-items:center">
+        <div>
+        <p style="font-family:var(--display); font-size:22px; font-weight:700; line-height:1.85; color:var(--navy); border-left:4px solid var(--sand-deep); padding-left:22px">楽しくなければ大学でない、<br>楽しいだけでも大学でない</p>
+        <p style="font-size:14px; color:var(--slate); margin-top:14px; padding-left:26px; line-height:1.9"><span style="font-family:var(--display); font-weight:700; font-size:17px; color:var(--navy)">加藤寛</span>　慶應義塾大学 湘南藤沢キャンパス 初代総合政策学部長（1990–1994）<br><span style="white-space:nowrap">嘉悦大学 元学長</span></p>
+        <p style="font-size:16px; line-height:2.05; margin-top:24px">SFCの恩師です。「僕はなにも教えないのに、みんながどんどん勉強して僕に教えてくれる」と言う人で、人の力を引き出すのがうまい先生でした。もうひとつよく口にしていたのが「改革はとにかくすぐやって、まず60点を取れればよい」。</p>
+        <p style="font-size:16px; line-height:2.05; margin-top:16px">私がやっているのは、この教えを数字の側から実装することだと思っています。大学の仕組みを作り替え、教育とつなぎ、その上で学生が社会と関わりながら伸びていく。北陸大学での6年間も、いま神田外語大学で設計している学部も、その延長線上にあります。</p>
+        <a class="more" href="https://www.keio.ac.jp/ja/sfc/magazine/alumni-stories/006183/" style="display:inline-block; margin-top:22px">SFCスピリッツのインタビュー →</a>
+        </div>
+        <div><img src="kato-illust.png" alt="加藤寛先生のイラスト" style="width:100%; display:block"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 連絡先 -->
+    <div style="border-top:1px solid var(--hair); padding-block:66px 40px">
+      <div style="background:var(--sand); border:2.5px solid var(--ink); border-radius:22px; box-shadow:6px 6px 0 var(--ink); padding:46px 48px; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:36px; align-items:center">
+        <div style="grid-column:span 7">
+          <h2 style="font-size:32px; font-weight:900; line-height:1.55; color:var(--navy)">IR・データ活用の相談、<br>講演・研修のご依頼</h2>
+          <p style="font-size:16px; line-height:2; color:var(--brown); margin-top:16px">大学のデータ活用、IR体制づくり、データサイエンス教育、AI教育の設計について、お話しできることがあります。</p>
+        </div>
+        <div style="grid-column:span 5; display:flex; flex-direction:column; gap:12px; align-items:flex-start">
+          <a class="pill solid" href="mailto:tajiri-s@kanda.kuis.ac.jp">tajiri-s@kanda.kuis.ac.jp</a>
+          <a class="pill" href="https://researchmap.jp/read0128413/">researchmap</a>
+          <a class="pill" href="https://x.com/shintajiri">X @shintajiri</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--hair); padding-block:24px 34px; display:flex; justify-content:space-between; align-items:center; gap:24px">
+      <p style="font-size:13px; color:var(--slate)">© 2026 Shintaro Tajiri</p>
+      <p style="font-size:13px; color:var(--slate)">アクセス解析に Google Analytics を使用しています</p>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
