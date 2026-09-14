@@ -1,2 +1,9 @@
 .DS_Store
 node_modules/
+
+# デザイン作業の中間生成物（再生成できるので追跡しない）
+design/tajiri-personal-site-lp.html
+design/kato-illust-v*.png
+design/kato-v*.png
+design/kato-standing.png
+design/比較_*.png
